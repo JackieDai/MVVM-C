@@ -6,6 +6,8 @@
 //
 
 import XCTest
+import RxSwift
+import RxCocoa
 @testable import MVVM_C
 
 final class MVVM_CTests: XCTestCase {
@@ -31,6 +33,37 @@ final class MVVM_CTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testDoOnNext() {
+        let disposeBag = DisposeBag()
+        
+        Observable.of("🍎", "🍐", "🍊", "🍋")
+            .do(onNext: { print("Intercepted:", $0) },
+                afterNext: { print("Intercepted after:", $0) },
+                onError: { print("Intercepted error:", $0) },
+                afterError: { print("Intercepted after error:", $0) },
+                onCompleted: { print("Completed")  },
+                afterCompleted: { print("After completed")  })
+            .subscribe(onNext: { print($0 + "====subscribe") })
+            .disposed(by: disposeBag)
+                
+                /*
+                 Intercepted: 🍎
+                 🍎====subscribe
+                 Intercepted after: 🍎
+                 Intercepted: 🍐
+                 🍐====subscribe
+                 Intercepted after: 🍐
+                 Intercepted: 🍊
+                 🍊====subscribe
+                 Intercepted after: 🍊
+                 Intercepted: 🍋
+                 🍋====subscribe
+                 Intercepted after: 🍋
+                 Completed
+                 After completed
+                 */
     }
 
 }
