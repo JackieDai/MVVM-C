@@ -9,12 +9,14 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+/// user state
 enum AuthenticationState {
     case signedIn
     case signedOut
 }
 
 class UserManager {
+    
     
     
     

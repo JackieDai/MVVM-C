@@ -9,7 +9,8 @@ def basic_pods
   pod 'RxSwift'           
   pod 'RxCocoa'            
   pod 'RxSwiftExt'        
-  pod 'RxDataSources'   
+  pod 'RxDataSources'
+  pod 'SnapKit'
 end
 
 # Testing

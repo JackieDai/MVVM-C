@@ -24,6 +24,7 @@ PODS:
     - RxSwiftExt/Core
   - RxTest (6.5.0):
     - RxSwift (= 6.5.0)
+  - SnapKit (5.6.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - RxSwift
   - RxSwiftExt
   - RxTest
+  - SnapKit
 
 SPEC REPOS:
   trunk:
@@ -47,6 +49,7 @@ SPEC REPOS:
     - RxSwift
     - RxSwiftExt
     - RxTest
+    - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
@@ -59,7 +62,8 @@ SPEC CHECKSUMS:
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
   RxTest: eb2d23adefc5a5ebf5779c7792fa3edfe6ebcc17
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 71ccd4bd49960c93f9fe790150895e692e28a3b1
+PODFILE CHECKSUM: 41e830bfd7b5336e08bc9b4f6db91af135be0f04
 
 COCOAPODS: 1.12.1

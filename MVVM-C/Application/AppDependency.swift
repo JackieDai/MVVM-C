@@ -14,7 +14,17 @@ protocol HasClient {
 }
 
 
+protocol AppDependencyType: HasClient {}
+
 
 struct AppDependency {
+    let client: APIClient
+    
+    init() {
+        self.client = .init()
+    }
+}
+
+extension AppDependency: AppDependencyType {
     
 }
