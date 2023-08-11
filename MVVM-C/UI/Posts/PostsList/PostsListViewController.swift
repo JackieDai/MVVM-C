@@ -30,13 +30,6 @@ class PostsListViewController: TableViewController, ViewModelAttaching {
             }
             .disposed(by: disposeBag)
         
-        viewModel.posts
-            .drive(tableView.rx.items(cellIdentifier: UITableViewCell.reuseID, cellType: UITableViewCell.self)) { indexPathRow, viewModel, cell in
-                cell.textLabel?.text = viewModel
-                cell.contentView.backgroundColor = .red
-            }
-            .disposed(by: disposeBag)
-        
         return viewModel
     }
     
@@ -46,14 +39,16 @@ class PostsListViewController: TableViewController, ViewModelAttaching {
 
         title = "Posts"
         
+        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.reuseID)
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        
     }
-    
-    
-
 
 }
 
 
 extension PostsListViewController {
-    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
 }
